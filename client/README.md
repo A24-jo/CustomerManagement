@@ -1,30 +1,38 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es un proyecto de plantilla que proporciona una configuración mínima para hacer funcionar una aplicación web con React en Vite, aprovechando TypeScript para una mejor gestión de tipos y HMR (Hot Module Replacement) para una experiencia de desarrollo más fluida.
 
-Currently, two official plugins are available:
+## Ejecutar la Aplicación Web
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Sigue estos pasos para ejecutar la aplicación web en tu entorno local:
 
-## Expanding the ESLint configuration
+1. **Clonar el Repositorio:**
+   
+git clone <URL_del_repositorio>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. **Instalar Dependencias:**
 
-- Configure the top-level `parserOptions` property like this:
+cd nombre_de_la_carpeta_del_proyecto
+npm install
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+3. **Configurar la URL Base:**
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+En el archivo `env.example` o donde corresponda en tu proyecto, asegúrate de configurar la variable de entorno `baseURL` con la URL base de tu servidor backend o donde tu aplicación necesite interactuar.
+
+4. **Iniciar el Servidor de Desarrollo:**
+
+npm run dev
+
+
+5. **Acceder a la Aplicación:**
+
+Abre tu navegador web y visita `http://localhost:5173/` para ver la aplicación en funcionamiento.
+
+## Notas Adicionales
+
+- Asegúrate de tener Node.js y npm instalados en tu sistema antes de seguir los pasos anteriores.
+- Puedes personalizar y expandir esta plantilla según las necesidades específicas de tu proyecto.
+- Consulta la documentación oficial de [Vite](https://vitejs.dev/) y [React](https://reactjs.org/) para obtener más información sobre cómo desarrollar con estas tecnologías.
+
+¡Disfruta desarrollando tu aplicación web con React, TypeScript y Vite!
+
