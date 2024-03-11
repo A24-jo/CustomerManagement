@@ -1,0 +1,59 @@
+.presentacion {
+  height: 100vh;
+}
+
+.animate_continer {
+  position: fixed;
+  z-index: -2;
+  height: 100%; /* Cambiado a 100% */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Añadido para evitar el desbordamiento */
+  animation: pulseBackground 5s ease-in-out infinite; /* Animación de fondo */
+}
+
+.presentacion_one_div {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 136, 0, 1) 0%,
+    rgba(255, 77, 210, 1) 50%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+  transition: all 0.5s ease-in-out;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/*conatiner_page este el contenido dela presentacion */
+.container_page {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_page button {
+  all: unset;
+  padding: 60px;
+  border-radius: 100%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}

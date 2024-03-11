@@ -1,0 +1,19 @@
+.modal_dialog {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: "12px";
+  gap: 10px;
+}
+
+.modal_input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+p{
+    margin: 0;
+    color: rgba(255, 0, 0, 0.678);
+    font-weight: bold;
+}
