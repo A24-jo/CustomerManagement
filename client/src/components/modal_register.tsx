@@ -29,7 +29,7 @@ function ModalRegister({
     reset,
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm<Clients>();
 
   const Onsubmit = handleSubmit(async (value) => {
@@ -84,6 +84,7 @@ function ModalRegister({
             {errors.nombre?.type === "required" && (
               <p>this field is required </p>
             )}
+            {errors.nombre?.type === "minLength" && <p>enter a valid name</p>}
           </div>
         </div>
         <div className="modal_input">
@@ -97,6 +98,9 @@ function ModalRegister({
             />
             {errors.nombre?.type === "required" && (
               <p>this field is required </p>
+            )}
+            {errors.nombre?.type === "minLength" && (
+              <p>enter a valid lastname </p>
             )}
           </div>
         </div>
