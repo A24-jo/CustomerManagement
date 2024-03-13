@@ -8,6 +8,15 @@ import "../style/modal_register.css";
 import { useEffect } from "react";
 import { createClientes, updateClientes } from "../service";
 
+const validarNumero = (value: string): boolean => {
+  return !isNaN(parseFloat(value)) && isFinite(parseFloat(value));
+};
+
+const validarEdad = (value: string): boolean => {
+  const edad = parseInt(value);
+  return !isNaN(edad) && edad >= 15 && edad <= 90;
+};
+
 interface PresentationProps {
   modal: boolean;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -96,10 +105,10 @@ function ModalRegister({
                 required: true,
               })}
             />
-            {errors.nombre?.type === "required" && (
+            {errors.apellido?.type === "required" && (
               <p>this field is required </p>
             )}
-            {errors.nombre?.type === "minLength" && (
+            {errors.apellido?.type === "minLength" && (
               <p>enter a valid lastname </p>
             )}
           </div>
@@ -110,11 +119,15 @@ function ModalRegister({
             <InputText
               {...register("edad", {
                 required: true,
+                validate: {
+                  esNumero: validarNumero,
+                  estaEnRango: validarEdad,
+                },
               })}
             />
-            {errors.nombre?.type === "required" && (
-              <p>this field is required </p>
-            )}
+            {errors.edad?.type === "required" && <p>this field is required </p>}
+            {errors.edad?.type === "esNumero" && <p>enter number validate</p>}
+            {errors.edad?.type === "estaEnRango" && <p>enter age validate</p>}
           </div>
         </div>
         <div className="modal_input">
@@ -126,7 +139,7 @@ function ModalRegister({
                 required: true,
               })}
             />
-            {errors.nombre?.type === "required" && (
+            {errors.fecha_nacimiento?.type === "required" && (
               <p>this field is required </p>
             )}
           </div>
@@ -140,9 +153,7 @@ function ModalRegister({
                 required: true,
               })}
             />
-            {errors.nombre?.type === "required" && (
-              <p>this field is required </p>
-            )}
+            {errors.dni?.type === "required" && <p>this field is required </p>}
           </div>
         </div>
         {footer()}
